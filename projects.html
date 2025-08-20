@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Ibrahim Zia</title>
+  <meta name="description" content="Open-source projects, demos, notebooks, and research resources by Ibrahim Zia." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="logo" href="/">IZ<span>.</span></a>
+      <nav class="nav__links">
+        <a href="/">Home</a>
+        <a href="about.html">About</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="btn btn--ghost">Theme</button>
+      <button id="mobileMenu" class="nav__burger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="drawer" id="drawer">
+    <a href="/">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+    <section class="section reveal">
+      <h1>My Open Source Projects</h1>
+      <p class="muted">Links point to GitHub, demos, or notebooks. Replace placeholders with your actual projects.</p>
+    </section>
+
+    <section class="grid grid-3 reveal">
+      <!-- Project card template -->
+      <article id="project-1" class="card project lift">
+        <div class="project__badge">LLM Tooling</div>
+        <h3>[Project Name]</h3>
+        <p class="muted">[Detailed description of the project, purpose, stack, and outcome.]</p>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">FastAPI</span>
+          <span class="pill">RAG</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://github.com/your/repo" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="https://your-demo-link" target="_blank" rel="noreferrer">Live Demo</a>
+        </div>
+      </article>
+
+      <article id="project-2" class="card project lift">
+        <div class="project__badge">Data</div>
+        <h3>[Project Name]</h3>
+        <p class="muted">[Description — dataset tooling, labeling, distillation, etc.]</p>
+        <div class="pill-row">
+          <span class="pill">Pandas</span>
+          <span class="pill">Polars</span>
+          <span class="pill">Arrow</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://github.com/your/repo" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="https://your-notebook-link" target="_blank" rel="noreferrer">Colab</a>
+        </div>
+      </article>
+
+      <article id="project-3" class="card project lift">
+        <div class="project__badge">Deploy</div>
+        <h3>[Project Name]</h3>
+        <p class="muted">[Description — autoscaling inference, observability, etc.]</p>
+        <div class="pill-row">
+          <span class="pill">Docker</span>
+          <span class="pill">K8s</span>
+          <span class="pill">Grafana</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn--primary" href="https://github.com/your/repo" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn--ghost" href="https://your-demo-link" target="_blank" rel="noreferrer">Docs</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Ibrahim Zia. All rights reserved.</div>
+      <div class="socials">
+        <a href="https://github.com/mibrahimzia" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://x.com/your-handle" target="_blank" rel="noreferrer">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
