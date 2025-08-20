@@ -1,29 +1,19 @@
-name: Deploy static site to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .  # Path to your static site files (index.html, css, js, etc.)
+      # (Optional) Add build steps if you’re using Jekyll, Hugo, React, etc.
+      # For plain static HTML, you don’t need anything here.
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        run: echo "Deployment complete. GitHub Pages will serve directly from main branch."
