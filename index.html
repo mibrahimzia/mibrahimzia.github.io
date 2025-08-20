@@ -1,26 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI/ML Portfolio</title>
+    <!-- Use the Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS to implement the theme and layout from the JSON design */
+
+        /* --- Variables and General Styling --- */
+        :root {
+            --primary: #4A90E2;
+            --secondary: #E24A90;
+            --background: #121212;
+            --text: #F5F5F5;
+            --accent: #90E24A;
+            --font-family: 'Inter', sans-serif;
+            --transition-speed: 0.5s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevents horizontal scroll from animations */
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* --- Header and Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            background-color: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a {
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--accent);
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* --- Page Sections --- */
+        .page-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .page-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Hero Section Styling --- */
+        #hero-section {
+            background-color: var(--background);
+            height: 100vh;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--text);
+            margin-bottom: 2rem;
+            animation: fadeIn 2s ease;
+        }
+
+        .hero-image {
+            width: clamp(150px, 30vw, 300px);
+            height: clamp(150px, 30vw, 300px);
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 0 20px rgba(144, 226, 74, 0.5);
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- Projects Intro Section Styling --- */
+        #projects-intro-section {
+            background-color: rgba(255,255,255,0.05);
+            padding: 6rem 2rem;
+            min-height: auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .project-card {
+            background-color: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* --- Contact Section Styling --- */
+        #contact-section {
+            background-color: var(--background);
+            padding: 4rem 2rem;
+            min-height: auto;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 2rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--text);
+            font-family: var(--font-family);
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .contact-form button {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background-color: var(--accent);
+        }
+
+        /* --- About Section Styling --- */
+        #about-section {
+            padding: 6rem 2rem;
+            min-height: auto;
+        }
+
+        #about-section h2 {
+            margin-bottom: 2rem;
+        }
+
+        /* --- Projects Details Section Styling --- */
+        #projects-details-section {
+            padding: 6rem 2rem;
+            min-height: auto;
+        }
+
+        .project-item {
+            background-color: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .project-item h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            margin: 0 0.5rem;
+        }
+        
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <p>This is the homepage. Customize me later!</p>
-  </main>
-  <footer>
-    <p>© 2025 My Website</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <a href="#hero-section" data-page="main">Home</a>
+            <a href="#about-section" data-page="about">About</a>
+            <a href="#projects-details-section" data-page="projects">Projects</a>
+            <a href="#contact-section" data-page="main">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main>
+        <!-- Home Page Section -->
+        <section id="hero-section" class="page-section active">
+            <div class="hero-content">
+                <img src="https://placehold.co/300x300/121212/F5F5F5?text=[Your%20Photo]" alt="Your Photo" class="hero-image">
+                <h1>[Your Name Here]</h1>
+                <h2>Independent AI/ML Researcher & Developer</h2>
+            </div>
+        </section>
+
+        <section id="projects-intro-section" class="page-section">
+            <h2 style="color: var(--text); font-size: 2.5rem; margin-bottom: 2rem;">Projects & Accomplishments</h2>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <a href="#projects-details-section" class="project-card">
+                    <h3>[Project Title 1]</h3>
+                    <p>[Brief intro to Project 1, a couple of sentences to hook the reader.]</p>
+                </a>
+                <!-- Project Card 2 -->
+                <a href="#projects-details-section" class="project-card">
+                    <h3>[Project Title 2]</h3>
+                    <p>[Brief intro to Project 2, a couple of sentences to hook the reader.]</p>
+                </a>
+                <!-- Project Card 3 -->
+                <a href="#projects-details-section" class="project-card">
+                    <h3>[Project Title 3]</h3>
+                    <p>[Brief intro to Project 3, a couple of sentences to hook the reader.]</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" class="page-section">
+            <h2 style="color: var(--text); font-size: 2.5rem;">Get In Touch</h2>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- About Page Section (Initially hidden) -->
+        <section id="about-section" class="page-section" style="display: none;">
+            <h2 style="color: var(--text); font-size: 2.5rem;">About Me</h2>
+            <p style="max-width: 800px; text-align: left; font-size: 1.1rem; margin-bottom: 2rem;">
+                [A detailed narrative about your journey, passion, and accomplishments in AI/ML research. This will be a longer, more detailed text section.]
+            </p>
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Education & Achievements</h3>
+            <ul style="max-width: 800px; text-align: left;">
+                <li style="list-style-type: '👉'; padding-left: 1rem;">[University/Institution & Degree]</li>
+                <li style="list-style-type: '👉'; padding-left: 1rem;">[Significant Award/Publication/Achievement]</li>
+            </ul>
+        </section>
+
+        <!-- Projects Page Section (Initially hidden) -->
+        <section id="projects-details-section" class="page-section" style="display: none;">
+            <h2 style="color: var(--text); font-size: 2.5rem; margin-bottom: 2rem;">My Open Source Projects</h2>
+            <div class="project-item">
+                <h3 style="color: var(--secondary);">[Project Name 1]</h3>
+                <p>[Detailed description of the project, including its purpose, technologies used, and research contributions.]</p>
+                <div class="project-links" style="margin-top: 1rem;">
+                    <a href="link-to-github-repo-1" target="_blank" style="color: var(--accent);">GitHub</a>
+                    <a href="link-to-colab-notebook-1" target="_blank" style="color: var(--accent);">Colab Notebook</a>
+                    <a href="link-to-live-demo-1" target="_blank" style="color: var(--accent);">Live Demo</a>
+                </div>
+            </div>
+            <div class="project-item">
+                <h3 style="color: var(--secondary);">[Project Name 2]</h3>
+                <p>[Detailed description of the project, including its purpose, technologies used, and research contributions.]</p>
+                <div class="project-links" style="margin-top: 1rem;">
+                    <a href="link-to-github-repo-2" target="_blank" style="color: var(--accent);">GitHub</a>
+                    <a href="link-to-colab-notebook-2" target="_blank" style="color: var(--accent);">Colab Notebook</a>
+                    <a href="link-to-live-demo-2" target="_blank" style="color: var(--accent);">Live Demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© [Year] [Your Name]. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="[Link to your GitHub]" target="_blank">GitHub</a>
+            <a href="[Link to your LinkedIn]" target="_blank">LinkedIn</a>
+            <a href="[Link to your Twitter]" target="_blank">Twitter</a>
+        </div>
+    </footer>
