@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Ibrahim Zia</title>
+  <meta name="description" content="Biography, education, and achievements of Ibrahim Zia." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="logo" href="/">IZ<span>.</span></a>
+      <nav class="nav__links">
+        <a href="/">Home</a>
+        <a class="active" href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button id="themeToggle" class="btn btn--ghost">Theme</button>
+      <button id="mobileMenu" class="nav__burger"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="drawer" id="drawer">
+    <a href="/">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <main class="container">
+    <section class="section reveal">
+      <h1>About Me</h1>
+      <p class="muted lead">
+        [A detailed narrative about your journey, passion, and accomplishments in AI/ML research. 
+        Discuss your focus areas (e.g., LLM tooling, data pipelines, inference, evaluation), your philosophy about open-source, and the kinds of problems you enjoy solving.]
+      </p>
+    </section>
+
+    <section class="section grid grid-2 reveal">
+      <div class="card">
+        <h2>Education</h2>
+        <ul class="list">
+          <li><strong>[Degree / Major]</strong> — [Institution], [Year]</li>
+          <li><strong>[Certification]</strong> — [Provider], [Year]</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Achievements</h2>
+        <ul class="list">
+          <li>[Publication / Award / Competition Result]</li>
+          <li>[Open-source Project Recognition / Stars / Mentions]</li>
+          <li>[Conference Talk / Workshop / Webinar]</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2>What I’m Exploring</h2>
+      <p class="muted">
+        [Briefly note current research interests — e.g., evaluation of small reasoning models, retrieval-augmented generation pipelines, dataset distillation, efficient quantization, and privacy-first AI infra.]
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Ibrahim Zia. All rights reserved.</div>
+      <div class="socials">
+        <a href="https://github.com/mibrahimzia" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://x.com/your-handle" target="_blank" rel="noreferrer">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
