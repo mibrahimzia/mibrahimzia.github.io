@@ -1,141 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ibrahim Zia — AI/ML Researcher & Developer</title>
-  <meta name="description" content="Independent AI/ML researcher & developer — projects, research, and open-source work." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="/assets/iz-removebg-preview1.png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ibrahim Zia | AI/ML Researcher & Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="theme-dark">
-  <!-- Navigation -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a class="logo" href="/">IZ<span>.</span></a>
-      <nav class="nav__links">
-        <a href="/">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button id="themeToggle" aria-label="Toggle theme" class="btn btn--ghost">Theme</button>
-      <button id="mobileMenu" class="nav__burger" aria-label="Open Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>MIZ</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Mobile drawer -->
-  <nav class="drawer" id="drawer">
-    <a href="/" onclick="closeDrawer()">Home</a>
-    <a href="about.html" onclick="closeDrawer()">About</a>
-    <a href="projects.html" onclick="closeDrawer()">Projects</a>
-    <a href="#contact" onclick="closeDrawer()">Contact</a>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glowing-text">Muhammad Ibrahim Zia</h1>
+                    <h3 class="subtitle">AI/ML Researcher & Developer</h3>
+                    <p class="hero-description">
+                        Independent researcher and high school student passionate about artificial intelligence, 
+                        machine learning, and building innovative solutions that make a difference.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn btn-primary">View My Work</a>
+                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/mibrahimzia" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:ibrahim.mzia@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="assets/images/profile.jpg" alt="Muhammad Ibrahim Zia">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-  <!-- Hero -->
-  <section class="hero container reveal">
-    <div class="hero__content">
-      <h1 class="grad-text">Ibrahim Zia</h1>
-      <p class="hero__tag">Independent AI/ML Researcher & Developer</p>
-      <p class="muted">I build open, practical AI systems — from data tooling to production-grade inference — and share my work with the community.</p>
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="projects.html">Explore Projects</a>
-        <a class="btn btn--ghost" href="#contact">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero__gallery">
-      <img src="assets/me-1.jpg" alt="Portrait 1" class="card lift lightbox" />
-      <img src="assets/me-2.jpg" alt="Portrait 2" class="card lift lightbox" />
-      <img src="assets/me-3.jpg" alt="Portrait 3" class="card lift lightbox" />
-    </div>
-  </section>
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of my recent work in AI and Machine Learning</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neural Network Framework</h3>
+                        <p>A custom-built neural network framework from scratch using Python and NumPy, demonstrating deep understanding of ML fundamentals.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">NumPy</span>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Projects preview -->
-  <section class="section container reveal" id="projects-preview">
-    <div class="section__head">
-      <h2>Projects & Accomplishments</h2>
-      <p class="muted">A quick look at selected work. These cards are placeholders — add your titles and one-liners. Links route to the full projects page.</p>
-    </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Computer Vision Application</h3>
+                        <p>Real-time object detection system using state-of-the-art CNN architectures, optimized for edge devices.</p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">CNN</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="grid grid-3">
-      <!-- Card 1 -->
-      <a class="card project lift" href="projects.html#project-1">
-        <div class="project__badge">Open Source</div>
-        <h3>[Project Title 1]</h3>
-        <p class="muted">[Brief intro to Project 1. One or two lines about the goal or impact.]</p>
-        <span class="link">View details →</span>
-      </a>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=400&fit=crop" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>NLP Sentiment Analyzer</h3>
+                        <p>Advanced sentiment analysis model using transformer architecture for social media text classification.</p>
+                        <div class="project-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">BERT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Card 2 -->
-      <a class="card project lift" href="projects.html#project-2">
-        <div class="project__badge">Research</div>
-        <h3>[Project Title 2]</h3>
-        <p class="muted">[Brief intro to Project 2. One or two lines about the approach or results.]</p>
-        <span class="link">View details →</span>
-      </a>
+            <div class="view-all">
+                <a href="projects.html" class="btn btn-primary">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-      <!-- Card 3 -->
-      <a class="card project lift" href="projects.html#project-3">
-        <div class="project__badge">Tooling</div>
-        <h3>[Project Title 3]</h3>
-        <p class="muted">[Brief intro to Project 3. One or two lines about what it enables.]</p>
-        <span class="link">View details →</span>
-      </a>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Muhammad Ibrahim Zia. All rights reserved.</p>
+            <p>Built with passion for AI and innovation</p>
+        </div>
+    </footer>
 
-  <!-- Contact -->
-  <section class="section container reveal" id="contact">
-    <div class="section__head">
-      <h2>Contact Me</h2>
-      <p class="muted">Collaborations, consulting, or just a hello — I’d love to hear from you.</p>
-    </div>
-
-    <form class="card form" id="contactForm" action="https://formspree.io/f/your-id" method="POST">
-      <!-- Replace the action with your Formspree endpoint or use mailto: -->
-      <div class="form__row">
-        <label>Name</label>
-        <input name="name" type="text" placeholder="Your name" required />
-      </div>
-      <div class="form__row">
-        <label>Email</label>
-        <input name="email" type="email" placeholder="you@example.com" required />
-      </div>
-      <div class="form__row">
-        <label>Message</label>
-        <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
-      </div>
-      <div class="form__actions">
-        <button class="btn btn--primary" type="submit">Send</button>
-        <span id="formStatus" class="muted"></span>
-      </div>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>© <span id="year"></span> Ibrahim Zia. All rights reserved.</div>
-      <div class="socials">
-        <a href="https://github.com/mibrahimzia" aria-label="GitHub" target="_blank" rel="noreferrer">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.57v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.83 1.24 1.83 1.24 1.07 1.84 2.8 1.31 3.48 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.25-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.24a11.5 11.5 0 0 1 6 0c2.28-1.56 3.29-1.24 3.29-1.24.66 1.65.24 2.87.12 3.17.77.85 1.23 1.93 1.23 3.25 0 4.63-2.8 5.66-5.48 5.96.43.37.81 1.1.81 2.22v3.29c0 .31.22.69.83.57A12 12 0 0 0 12 .5z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/your-handle" aria-label="LinkedIn" target="_blank" rel="noreferrer">in</a>
-        <a href="https://x.com/your-handle" aria-label="Twitter/X" target="_blank" rel="noreferrer">X</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Lightbox modal -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <img id="lightboxImg" alt="Full size" />
-    <button class="lightbox__close" aria-label="Close" onclick="closeLightbox()">✕</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
