@@ -1,80 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Ibrahim Zia</title>
-  <meta name="description" content="Biography, education, and achievements of Ibrahim Zia." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Muhammad Ibrahim Zia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="theme-dark">
-  <header class="nav">
-    <div class="container nav__inner">
-      <a class="logo" href="/">IZ<span>.</span></a>
-      <nav class="nav__links">
-        <a href="/">Home</a>
-        <a class="active" href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <button id="themeToggle" class="btn btn--ghost">Theme</button>
-      <button id="mobileMenu" class="nav__burger"><span></span><span></span><span></span></button>
-    </div>
-  </header>
-  <nav class="drawer" id="drawer">
-    <a href="/">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="index.html#contact">Contact</a>
-  </nav>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>MIZ</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <main class="container">
-    <section class="section reveal">
-      <h1>About Me</h1>
-      <p class="muted lead">
-        [A detailed narrative about your journey, passion, and accomplishments in AI/ML research. 
-        Discuss your focus areas (e.g., LLM tooling, data pipelines, inference, evaluation), your philosophy about open-source, and the kinds of problems you enjoy solving.]
-      </p>
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h1 class="page-title glowing-text">About Me</h1>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="assets/images/profile.jpg" alt="Muhammad Ibrahim Zia">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h2>AI/ML Researcher & Developer</h2>
+                    <p class="lead">
+                        Hi! I'm Muhammad Ibrahim Zia, a passionate AI and Machine Learning researcher 
+                        currently in my final year of high school. Despite my age, I've dedicated myself 
+                        to understanding and advancing the field of artificial intelligence.
+                    </p>
+                    
+                    <p>
+                        My journey into AI began with curiosity about how machines could learn and make 
+                        decisions. What started as exploring basic algorithms has evolved into building 
+                        complex neural networks, experimenting with state-of-the-art models, and contributing 
+                        to the AI research community.
+                    </p>
+                    
+                    <p>
+                        As an independent researcher, I focus on practical applications of machine learning, 
+                        from computer vision to natural language processing. I believe in learning by doing, 
+                        which is why I build projects from scratch to truly understand the underlying concepts.
+                    </p>
+                    
+                    <p>
+                        When I'm not coding or training models, you can find me reading research papers, 
+                        contributing to open-source projects, or sharing my knowledge with the community.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <ul>
+                            <li>Deep Learning</li>
+                            <li>Neural Networks</li>
+                            <li>Supervised/Unsupervised Learning</li>
+                            <li>Reinforcement Learning</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Computer Vision</h3>
+                        <ul>
+                            <li>Image Classification</li>
+                            <li>Object Detection</li>
+                            <li>CNN Architectures</li>
+                            <li>Image Segmentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Natural Language Processing</h3>
+                        <ul>
+                            <li>Text Classification</li>
+                            <li>Sentiment Analysis</li>
+                            <li>Transformers & BERT</li>
+                            <li>Language Models</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>TensorFlow & PyTorch</li>
+                            <li>NumPy & Pandas</li>
+                            <li>Scikit-learn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Experience -->
+            <div class="timeline-section">
+                <h2 class="section-title">Journey</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>High School - Final Year</h3>
+                            <span class="timeline-date">2020 - Present</span>
+                            <p>
+                                Balancing academic excellence with independent AI research. 
+                                Participating in coding competitions and contributing to open-source projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Independent AI Research</h3>
+                            <span class="timeline-date">2022 - Present</span>
+                            <p>
+                                Conducting independent research in machine learning, focusing on practical 
+                                applications and implementing research papers from scratch.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Started ML Journey</h3>
+                            <span class="timeline-date">2021</span>
+                            <p>
+                                Began learning machine learning fundamentals, starting with basic algorithms 
+                                and gradually advancing to deep learning and neural networks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section grid grid-2 reveal">
-      <div class="card">
-        <h2>Education</h2>
-        <ul class="list">
-          <li><strong>[Degree / Major]</strong> — [Institution], [Year]</li>
-          <li><strong>[Certification]</strong> — [Provider], [Year]</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>Achievements</h2>
-        <ul class="list">
-          <li>[Publication / Award / Competition Result]</li>
-          <li>[Open-source Project Recognition / Stars / Mentions]</li>
-          <li>[Conference Talk / Workshop / Webinar]</li>
-        </ul>
-      </div>
-    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Muhammad Ibrahim Zia. All rights reserved.</p>
+            <p>Built with passion for AI and innovation</p>
+        </div>
+    </footer>
 
-    <section class="section reveal">
-      <h2>What I’m Exploring</h2>
-      <p class="muted">
-        [Briefly note current research interests — e.g., evaluation of small reasoning models, retrieval-augmented generation pipelines, dataset distillation, efficient quantization, and privacy-first AI infra.]
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>© <span id="year"></span> Ibrahim Zia. All rights reserved.</div>
-      <div class="socials">
-        <a href="https://github.com/mibrahimzia" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://x.com/your-handle" target="_blank" rel="noreferrer">X</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
