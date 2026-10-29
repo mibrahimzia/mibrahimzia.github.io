@@ -1,64 +1,68 @@
-// Theme toggle with persistence
-(function initTheme() {
-  const stored = localStorage.getItem("theme") || "dark";
-  if (stored === "light") document.body.classList.remove("theme-dark");
-  document.getElementById("themeToggle")?.addEventListener("click", () => {
-    document.body.classList.toggle("theme-dark");
-    const mode = document.body.classList.contains("theme-dark") ? "dark" : "light";
-    localStorage.setItem("theme", mode);
-  });
-})();
-
-// Mobile drawer
-const drawer = document.getElementById("drawer");
-const burger = document.getElementById("mobileMenu");
-function closeDrawer(){ drawer?.classList.remove("open"); }
-burger?.addEventListener("click", () => drawer.classList.toggle("open"));
-
-// Reveal on scroll
-const revealEls = document.querySelectorAll(".reveal");
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-}, { threshold: 0.12 });
-revealEls.forEach(el => io.observe(el));
-
-// Lightbox for gallery
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-document.querySelectorAll(".lightbox").forEach(img => {
-  img.addEventListener("click", () => {
-    lightboxImg.src = img.src;
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-  });
-});
-function closeLightbox() {
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden", "true");
-}
-lightbox?.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-window.closeLightbox = closeLightbox;
-
-// Contact form UX (works with Formspree or mailto fallback)
-const form = document.getElementById("contactForm");
-const statusEl = document.getElementById("formStatus");
-form?.addEventListener("submit", async (e) => {
-  if (!form.action || form.action.startsWith("mailto:")) return; // let browser handle mailto
-  e.preventDefault();
-  statusEl.textContent = "Sending…";
-  try {
-    const data = new FormData(form);
-    const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
-    if (res.ok) {
-      statusEl.textContent = "Thanks! I’ll get back to you shortly.";
-      form.reset();
-    } else {
-      statusEl.textContent = "Something went wrong. You can email me directly.";
-    }
-  } catch {
-    statusEl.textContent = "Network error. Please try again later.";
-  }
-});
-
 // Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Contact form: posts to FormSubmit, which forwards the message to my inbox.
+// If the request fails, it falls back to opening a pre-filled email draft.
+const CONTACT_EMAIL = 'ibrahim.mzia@gmail.com';
+const form = document.getElementById('contactForm');
+
+if (form) {
+  const status = document.getElementById('formStatus');
+  const btn = document.getElementById('sendBtn');
+
+  const setStatus = (text, cls) => { status.textContent = text; status.className = cls || ''; };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      setStatus('Please fill in your name, email and message.', 'err');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setStatus('That email address does not look right.', 'err');
+      return;
+    }
+    // Honeypot filled in: pretend success, send nothing.
+    if (form._honey.value) {
+      setStatus('Thanks, your message was sent.', 'ok');
+      form.reset();
+      return;
+    }
+
+    btn.disabled = true;
+    setStatus('Sending...');
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name, email, message,
+          _subject: 'Portfolio message from ' + name,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === 'false' || data.success === false) throw new Error('send failed');
+
+      setStatus('Thanks, your message was sent. I will reply by email.', 'ok');
+      form.reset();
+    } catch (err) {
+      const body = encodeURIComponent(message + '\n\n' + name + ' <' + email + '>');
+      const subject = encodeURIComponent('Portfolio message from ' + name);
+      status.className = 'err';
+      status.innerHTML = 'Could not send from the page. ' +
+        '<a href="mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body + '">Open it as an email instead</a>.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}

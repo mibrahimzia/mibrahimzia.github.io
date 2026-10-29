@@ -1,209 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Muhammad Ibrahim Zia</title>
-    <meta name="description" content="About Muhammad Ibrahim Zia: first-year Electrical Engineering student at NED UET and independent AI builder from Karachi.">
-
-    <!-- Import CSS files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" href="assets/iz-removebg-preview1.png" type="image/png">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio | Muhammad Ibrahim Zia</title>
+  <meta name="description" content="Bio of Muhammad Ibrahim Zia: EE student at NED UET, Karachi, and independent AI builder.">
+  <link rel="icon" href="assets/iz-removebg-preview1.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>MIZ</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">M. Ibrahim Zia</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">Bio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <h1 class="page-title glowing-text">About Me</h1>
+  <main class="wrap">
+    <h1 class="page-title">Bio</h1>
 
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-container">
-                        <img src="assets/iz-removebg-preview.png" alt="IZ logo">
-                        <div class="image-glow"></div>
-                    </div>
-                </div>
+    <ul class="facts">
+      <li><b>Studying</b><span>Electrical Engineering, NED University of Engineering &amp; Technology (NED UET), first year, started Fall 2026</span></li>
+      <li><b>Based in</b><span>Karachi, Pakistan</span></li>
+      <li><b>Before that</b><span>Intermediate in Pre-Engineering, 2025, grade A1, D. J. Sindh Government Science College</span></li>
+      <li><b>Membership</b><span>IEEE Student Member: Power &amp; Energy (PES), Oceanic Engineering (OES) and Industrial Electronics (IES) societies</span></li>
+      <li><b>Languages</b><span>English, Urdu</span></li>
+    </ul>
 
-                <div class="about-text">
-                    <h2>EE Student &amp; Independent AI Builder</h2>
-                    <p class="lead">
-                        Hi, I'm Muhammad Ibrahim Zia, a first-year Electrical Engineering student at
-                        NED University of Engineering &amp; Technology (NED UET) in Karachi, and an independent
-                        builder of AI tools.
-                    </p>
+    <div class="prose">
+      <h3>Who I am</h3>
+      <p>
+        I'm an engineering student who builds things. I'm entrepreneurial by temperament and philosophical by habit,
+        and I like problems where technology meets a real opportunity. My long-term direction is energy and space
+        systems, ideally with a venture-building angle rather than a purely corporate path.
+      </p>
 
-                    <p>
-                        I build through AI-assisted development: I research a problem properly, direct AI tools to
-                        implement it, then test, break and refine the result. My hand-written Python is basic, and I'd
-                        rather say so plainly than pretend otherwise. What I bring is choosing problems worth solving,
-                        designing the system, and shipping something that actually runs.
-                    </p>
+      <h3>How I got here</h3>
+      <p>
+        I didn't start with AI. I tried game development, web design and JavaScript, and graphic design, including
+        digital Arabic calligraphy. Each taught me something, but none held me the way building AI tools did, so
+        that's where I settled.
+      </p>
 
-                    <p>
-                        My work so far centres on running AI locally and applying ML to real data: an offline runner for
-                        Microsoft's experimental BitNet models, an exoplanet classifier built for the NASA Space Apps
-                        Challenge, and experiments with quantized local models and retrieval-augmented generation.
-                    </p>
+      <h3>How I work</h3>
+      <p>
+        I build through AI-assisted development: I research a problem thoroughly, direct AI tools to implement it,
+        then test, break and refine the result. My hand-written Python is basic, and I'd rather say so plainly than
+        pretend otherwise. What I bring is choosing problems worth solving, designing the system, and shipping
+        something that actually runs. I have working knowledge of machine-learning basics such as linear and
+        logistic regression, and I'm studying model architectures in more depth.
+      </p>
 
-                    <p>
-                        On the engineering side I'm drawn to energy and space problems. I'm an IEEE Student Member
-                        (PES, OES and IES societies) and I'm currently exploring a degradation-aware adaptive MPPT
-                        approach for CubeSat solar arrays, which is early-stage work rather than a finished project.
-                    </p>
-                </div>
-            </div>
+      <h3>What I've built</h3>
+      <p>
+        An offline runner for Microsoft's BitNet models, an exoplanet classifier for the NASA Space Apps Challenge
+        2025, a multi-tokenizer token counter, and a database-backed web game. I've also experimented with quantized
+        local models and retrieval-augmented generation. Details are on the <a href="index.html#projects">home page</a>.
+      </p>
 
-            <!-- Skills Section -->
-            <div class="skills-section">
-                <h2 class="section-title">What I Work With</h2>
+      <h3>What I'm exploring</h3>
+      <p>
+        Space and power: I'm looking into degradation-aware adaptive MPPT for CubeSat solar arrays, which is
+        early-stage work, and I'm sketching ideas for NASA Space Apps 2026. On the AI side, I'm learning how
+        architectures like JEPA work well enough to argue about them.
+      </p>
 
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>AI &amp; Machine Learning</h3>
-                        <ul>
-                            <li>Classification (XGBoost, scikit-learn)</li>
-                            <li>Local LLM inference (BitNet, GGUF)</li>
-                            <li>Tokenization &amp; context planning</li>
-                            <li>Basic RAG experiments</li>
-                        </ul>
-                    </div>
+      <h3>Looking for</h3>
+      <p>
+        Internships and early engineering experience, student competitions, open-source collaboration, and
+        conversations with people building in energy, space or AI. <a href="contact.html">Get in touch</a>.
+      </p>
+    </div>
+  </main>
 
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Web &amp; Backend</h3>
-                        <ul>
-                            <li>HTML, CSS, vanilla JavaScript</li>
-                            <li>FastAPI</li>
-                            <li>PostgreSQL (Neon)</li>
-                            <li>Vercel deployment</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Languages &amp; Tools</h3>
-                        <ul>
-                            <li>Python (basic, AI-assisted)</li>
-                            <li>Go &amp; TypeScript (AI-assisted)</li>
-                            <li>Gradio &amp; Hugging Face</li>
-                            <li>Git &amp; GitHub</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-category">
-                        <div class="skill-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3>Engineering Interests</h3>
-                        <ul>
-                            <li>Power &amp; energy systems</li>
-                            <li>Space hardware (CubeSat power)</li>
-                            <li>Solar MPPT</li>
-                            <li>IEEE PES, OES &amp; IES</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education & Experience -->
-            <div class="timeline-section">
-                <h2 class="section-title">Journey</h2>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Electrical Engineering, NED UET</h3>
-                            <span class="timeline-date">2026 - Present</span>
-                            <p>
-                                First-year student in Karachi. IEEE Student Member across the
-                                Power &amp; Energy, Oceanic Engineering and Industrial Electronics societies.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Released BitNet Runner</h3>
-                            <span class="timeline-date">2025</span>
-                            <p>
-                                Open-sourced a desktop app that wraps bitnet.cpp so BitNet models can be run
-                                and chatted with offline, no manual setup required.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>NASA Space Apps Challenge 2025</h3>
-                            <span class="timeline-date">2025</span>
-                            <p>
-                                Built ExoPlanetHunt AI for the "A World Away" challenge: an ML classifier
-                                for Kepler exoplanet candidates with a public web interface.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Intermediate (Pre-Engineering)</h3>
-                            <span class="timeline-date">Completed 2025</span>
-                            <p>
-                                D. J. Sindh Government Science College, Karachi. Grade A1.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Muhammad Ibrahim Zia. All rights reserved.</p>
-            <p>Karachi, Pakistan</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="wrap">&copy; <span id="year">2026</span> Muhammad Ibrahim Zia</div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

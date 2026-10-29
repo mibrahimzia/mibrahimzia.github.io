@@ -1,184 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Muhammad Ibrahim Zia</title>
-    <meta name="description" content="Get in touch with Muhammad Ibrahim Zia about AI projects, space and energy engineering, or collaboration.">
-
-    <!-- Import CSS files -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="icon" href="assets/iz-removebg-preview1.png" type="image/png">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Muhammad Ibrahim Zia</title>
+  <meta name="description" content="Contact Muhammad Ibrahim Zia about AI projects, space and energy engineering, or collaboration.">
+  <link rel="icon" href="assets/iz-removebg-preview1.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h2>MIZ</h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-            </button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">M. Ibrahim Zia</a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">Bio</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <h1 class="page-title glowing-text">Get In Touch</h1>
-            <p class="page-subtitle">Have a project, a question or an idea? I'd like to hear it.</p>
+  <main class="wrap">
+    <h1 class="page-title">Contact</h1>
+    <p style="margin-top:1rem">
+      Send a message below, or reach me directly at
+      <a href="mailto:ibrahim.mzia@gmail.com">ibrahim.mzia@gmail.com</a>.
+    </p>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/mibrahimzia/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/mibrahimzia" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.instagram.com/ibrahim.mzia" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@Muhammad-Ibrahim-Zia" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
 
-            <div class="contact-content">
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <h2>Let's Connect</h2>
-                    <p>
-                        I'm always up for talking about AI tools, space and energy engineering,
-                        student competitions, or a collaboration. The fastest way to reach me is email or LinkedIn.
-                    </p>
+    <form id="contactForm" novalidate>
+      <label>Name
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </label>
+      <label>Email
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </label>
+      <label>Message
+        <textarea id="message" name="message" required></textarea>
+      </label>
+      <!-- Honeypot: real people never fill this in -->
+      <input class="hp" type="text" id="website" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" id="sendBtn">Send message</button>
+      <p id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </main>
 
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>Email</h3>
-                                <a href="mailto:ibrahim.mzia@gmail.com">ibrahim.mzia@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>GitHub</h3>
-                                <a href="https://github.com/mibrahimzia" target="_blank" rel="noopener">@mibrahimzia</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/mibrahimzia/" target="_blank" rel="noopener">in/mibrahimzia</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-twitter"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>X (Twitter)</h3>
-                                <a href="https://x.com/mibrahimzia" target="_blank" rel="noopener">@mibrahimzia</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>Instagram</h3>
-                                <a href="https://www.instagram.com/ibrahim.mzia" target="_blank" rel="noopener">@ibrahim.mzia</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <i class="fab fa-youtube"></i>
-                            </div>
-                            <div class="method-info">
-                                <h3>YouTube</h3>
-                                <a href="https://www.youtube.com/@Muhammad-Ibrahim-Zia" target="_blank" rel="noopener">@Muhammad-Ibrahim-Zia</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="collaboration-info">
-                        <h3>Open to Collaboration</h3>
-                        <p>I'm particularly interested in:</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> AI tools that run locally and offline</li>
-                            <li><i class="fas fa-check"></i> NASA Space Apps and other student challenges</li>
-                            <li><i class="fas fa-check"></i> Energy and space-systems projects</li>
-                            <li><i class="fas fa-check"></i> Open-source contributions</li>
-                            <li><i class="fas fa-check"></i> Internships and early engineering experience</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">
-                                <i class="fas fa-user"></i> Your Name
-                            </label>
-                            <input type="text" id="name" name="name" required placeholder="Your name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">
-                                <i class="fas fa-envelope"></i> Your Email
-                            </label>
-                            <input type="email" id="email" name="email" required placeholder="you@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">
-                                <i class="fas fa-tag"></i> Subject
-                            </label>
-                            <input type="text" id="subject" name="subject" required placeholder="Project collaboration">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">
-                                <i class="fas fa-comment"></i> Message
-                            </label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project or idea..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-
-                        <div class="form-status" id="formStatus"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Muhammad Ibrahim Zia. All rights reserved.</p>
-            <p>Karachi, Pakistan</p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="wrap">&copy; <span id="year">2026</span> Muhammad Ibrahim Zia</div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
