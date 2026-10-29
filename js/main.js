@@ -89,7 +89,8 @@ if (filterButtons.length > 0) {
                     card.style.display = 'grid';
                     card.style.animation = 'fadeInUp 0.5s ease-out';
                 } else {
-                    if (card.getAttribute('data-category') === filterValue) {
+                    const categories = (card.getAttribute('data-category') || '').split(' ');
+                    if (categories.includes(filterValue)) {
                         card.style.display = 'grid';
                         card.style.animation = 'fadeInUp 0.5s ease-out';
                     } else {
@@ -102,61 +103,30 @@ if (filterButtons.length > 0) {
 }
 
 // ==================== 
-// CONTACT FORM
+// CONTACT FORM (opens a pre-filled email draft; no third-party service needed)
 // ====================
-// Initialize EmailJS with your public key
-// Get your public key from: https://dashboard.emailjs.com/admin/account
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Show loading state
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-        
-        // Send email using EmailJS
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs from EmailJS
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-            .then(function(response) {
-                // Success
-                formStatus.className = 'form-status success';
-                formStatus.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-                contactForm.reset();
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 5000);
-            }, function(error) {
-                // Error
-                formStatus.className = 'form-status error';
-                formStatus.textContent = 'Oops! Something went wrong. Please try again or email me directly.';
-                
-                // Reset button
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                console.error('EmailJS error:', error);
-            });
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const body = `${message}\n\n---\nFrom: ${name} <${email}>`;
+        const mailto = 'mailto:ibrahim.mzia@gmail.com'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(body);
+
+        window.location.href = mailto;
+
+        formStatus.className = 'form-status success';
+        formStatus.style.display = 'block';
+        formStatus.textContent = 'Opening your email app with the message ready to send. If nothing opens, email me at ibrahim.mzia@gmail.com.';
     });
 }
 
