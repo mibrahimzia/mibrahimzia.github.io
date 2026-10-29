@@ -7,6 +7,7 @@ Personal site of Muhammad Ibrahim Zia: https://mibrahimzia.github.io/
 - `index.html`: intro, what I'm working on now, and projects (scroll)
 - `about.html`: bio
 - `contact.html`: working contact form
+- `projects.html`, `404.html`: redirect and not-found pages
 
 ## Files
 
